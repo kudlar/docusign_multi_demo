@@ -6,7 +6,7 @@ The /app directory holds the complete example
 The top level files are used to manage and configure the example on [Heroku](https://www.heroku.com/).
 
 ## Run the recipe on Heroku
-The recipe source, as is, works on the [Heroku](https://www.heroku.com/) using the free service level. No credit card needed!
+The recipe source can be run on [Heroku](https://www.heroku.com/) using the free service level. No credit card needed!
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
