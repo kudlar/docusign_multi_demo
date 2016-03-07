@@ -1,0 +1,13 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    {% include 'flash.html' %}
+    
+    {% if data.ok %}
+	    {{data.html|safe}}
+	{% else %}
+        {{data.html|safe}}</h3>
+    {% endif %}
+    
+{% endblock %}

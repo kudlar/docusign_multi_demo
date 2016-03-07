@@ -1,0 +1,17 @@
+{
+  "name": "012.Multiple Docs Python Recipe",
+  "description": "DocuSign 012.Multiple Docs Python Recipe",
+  "keywords": ["python"],
+  "addons": [],
+  "env": {
+      "DS_USER_EMAIL": {
+        "description": "Developer account email."
+      },
+      "DS_USER_PW": {
+        "description": "Password (may be encoded)"
+      },
+      "DS_INTEGRATION_ID": {
+        "description": "Integration key"
+      }
+   }
+}
