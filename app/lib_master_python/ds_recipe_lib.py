@@ -3,7 +3,7 @@
 # Set encoding to utf8. See http:#stackoverflow.com/a/21190382/64904 
 import sys; reload(sys); sys.setdefaultencoding('utf8')
 
-import json, certifi, requests, os, base64, math, string, urllib, random, time
+import json, certifi, requests, os, base64, math, string, urllib, random, time, re
 from flask import request
 # See http:#requests.readthedocs.org/ for information on the requests library
 # See https:#urllib3.readthedocs.org/en/latest/security.html for info on making secure https calls
@@ -149,6 +149,7 @@ def make_temp_email():
     email_count = math.pow(email_count, 2)
     email = str(email_count) + str(time.time())
     email = base64.b64encode (email)
+    email = "a" + re.sub(r'[^A-Za-z0-9]', '', email) # strip non-alphanumeric characters
     return email + "@" + temp_email_server
 
 def get_temp_email_access(email):
