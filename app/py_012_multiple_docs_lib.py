@@ -47,8 +47,10 @@ def send():
 
     ds_signer1_email = "rastok@gmail.com"
     ds_signer1_name = "Signer 1"
+    ds_signer2_email = "rasto@grownapps.io"
+    ds_signer2_name = "Signer 2"
     ds_cc1_email = "rasto@grownapps.io"
-    ds_cc1_name = "Signer 2"
+    ds_cc1_name = "Carbon Copy"
 
     # STEP 1 - Login
     r = ds_recipe_lib.login()
@@ -190,12 +192,18 @@ def send():
                 "name": ds_signer1_name,
                 "recipientId": "1",
                 "routingOrder": "1",
-                "tabs": fields}]
+                "tabs": fields},
+                {"email": ds_signer2_email,
+                 "name": ds_signer2_name,
+                 "recipientId": "2",
+                 "routingOrder": "2",
+                 "tabs": fields}
+                ]
     
     ccs = [{"email": ds_cc1_email,
                 "name": ds_cc1_name,
-                "recipientId": "2",
-                "routingOrder": "2"}]
+                "recipientId": "3",
+                "routingOrder": "3"}]
     
     data = {"emailSubject": subject,
         "documents": documents, 
