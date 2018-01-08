@@ -192,7 +192,7 @@ def send():
         "name": "Date Signed",
         "tabLabel": "doc3_date_signed"}]
     }
-	
+
 	fields2 = {
     "signHereTabs": [{
         "anchorString": "signer1sig", # Anchored for doc 1
