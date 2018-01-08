@@ -73,7 +73,7 @@ def send():
     # The documents array can include multiple documents, of differing types.
     # All documents are converted to pdf prior to signing.
     # The fileExtension field defaults to "pdf".
-    documents = [{"documentId": "1", 
+    documents1 = [{"documentId": "1",
             "name": doc_document_name,
             "fileExtension": os.path.splitext(doc_document_path)[1][1:],
             "documentBase64": base64.b64encode(file_contents)},
@@ -81,11 +81,17 @@ def send():
             "name": doc2_document_name,
             "fileExtension": os.path.splitext(doc2_document_path)[1][1:],
             "documentBase64": base64.b64encode(file2_contents)},
-            {"documentId": "3", 
-            "name": doc3_document_name,
-            "fileExtension": os.path.splitext(doc3_document_path)[1][1:],
-            "documentBase64": base64.b64encode(file3_contents)}
         ]
+
+    documents2 = [{"documentId": "1",
+                "name": doc_document_name,
+                "fileExtension": os.path.splitext(doc_document_path)[1][1:],
+                "documentBase64": base64.b64encode(file_contents)},
+                {"documentId": "3",
+                "name": doc3_document_name,
+                "fileExtension": os.path.splitext(doc3_document_path)[1][1:],
+                "documentBase64": base64.b64encode(file3_contents)}
+            ]
     
     # The signing fields
     #
@@ -188,12 +194,14 @@ def send():
         "tabLabel": "doc3_date_signed"}]
     }
     
-    signers = [{"email": ds_signer1_email,
+    signers1 = [{"email": ds_signer1_email,
                 "name": ds_signer1_name,
                 "recipientId": "1",
                 "routingOrder": "1",
-                "tabs": fields},
-                {"email": ds_signer2_email,
+                "tabs": fields}
+                ]
+
+    signers2 = [{"email": ds_signer2_email,
                  "name": ds_signer2_name,
                  "recipientId": "2",
                  "routingOrder": "2",
@@ -205,25 +213,37 @@ def send():
                 "recipientId": "3",
                 "routingOrder": "3"}]
     
-    data = {"emailSubject": subject,
-        "documents": documents, 
-        "recipients": {"signers": signers, "carbonCopies": ccs},
+    data1 = {"emailSubject": subject,
+        "documents": documents1,
+        "recipients": {"signers": signers1, "carbonCopies": ccs},
         "status": "sent"
     }
+
+    data2 = {"emailSubject": subject,
+            "documents": documents2,
+            "recipients": {"signers": signers2, "carbonCopies": ccs},
+            "status": "sent"
+        }
         
     # append "/envelopes" to the baseUrl and use in the request
     url = ds_recipe_lib.ds_base_url + "/envelopes"
     try:
-        r = requests.post(url, headers=ds_recipe_lib.ds_headers, json=data)
+        r1 = requests.post(url, headers=ds_recipe_lib.ds_headers, json=data1)
     except requests.exceptions.RequestException as e:
         return {'ok': False, 'msg': "Error calling Envelopes:create: " + str(e)}
-        
-    status = r.status_code
+
+    try:
+        r2 = requests.post(url, headers=ds_recipe_lib.ds_headers, json=data2)
+    except requests.exceptions.RequestException as e:
+        return {'ok': False, 'msg': "Error calling Envelopes:create: " + str(e)}
+
+
+    status = r1.status_code
     if (status != 201): 
         return ({'ok': False, 'html': "<h3>Error calling DocuSign Envelopes:create</h3><p>Status is: " + 
             str(status) + ". Response: </p><pre><code>" + r.text + "</code></pre>"})
 
-    data = r.json()
+    data = r1.json()
     envelope_id = data['envelopeId']
     
     # Instructions for reading the email
