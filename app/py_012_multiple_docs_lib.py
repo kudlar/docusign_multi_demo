@@ -280,7 +280,7 @@ def send():
 
     url = ds_recipe_lib.ds_base_url + '/envelopes'
     try:
-        r1 = requests.post(url, headers=ds_recipe_lib.ds_headers,
+        r = requests.post(url, headers=ds_recipe_lib.ds_headers,
                            json=data1)
     except requests.exceptions.RequestException, e:
         return {'ok': False, 'msg': 'Error calling Envelopes:create: ' \
@@ -295,14 +295,14 @@ def send():
 
     # ####################################################################
 
-    status = r1.status_code
+    status = r.status_code
     if status != 201:
         return {'ok': False,
                 'html': '<h3>Error calling DocuSign Envelopes:create</h3><p>Status is: ' \
                 + str(status) + '. Response: </p><pre><code>' + r.text \
                 + '</code></pre>'}
 
-    data = r1.json()
+    data = r.json()
     envelope_id = data['envelopeId']
 
     # Instructions for reading the email
