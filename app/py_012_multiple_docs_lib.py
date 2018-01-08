@@ -163,7 +163,7 @@ def send():
             'optional': 'false',
             'scaleValue': 1,
             'tabLabel': 'signer1sig',
-			'ignoreIfNotPresent': 'true'
+			'IgnoreIfNotPresent': 'true'
             }, {
             'documentId': '2',
             'pageNumber': '1',
@@ -174,9 +174,10 @@ def send():
             'optional': 'false',
             'scaleValue': 1,
             'tabLabel': 'signer1_doc2',
-			'ignoreIfNotPresent': 'true'
+			'IgnoreIfNotPresent': 'true'
             }, {
             'anchorString': 'Client Signature',
+			'IgnoreIfNotPresent': 'true'
             'anchorXOffset': '0',
             'anchorYOffset': '-4',
             'anchorUnits': 'mms',
@@ -184,8 +185,7 @@ def send():
             'name': 'Please sign here',
             'optional': 'true',
             'scaleValue': 1,
-            'tabLabel': 'doc3_client_sig',
-			'ignoreIfNotPresent': 'true'
+            'tabLabel': 'doc3_client_sig'
             }],
         'fullNameTabs': [{
             'anchorString': 'signer1name',
@@ -194,7 +194,7 @@ def send():
             'recipientId': '1',
             'tabLabel': 'Full Name',
             'name': 'Full Name',
-			'ignoreIfNotPresent': 'true'
+			'IgnoreIfNotPresent': 'true'
             }],
         'textTabs': [{
             'anchorString': 'signer1company',
@@ -204,16 +204,16 @@ def send():
             'tabLabel': 'Company',
             'name': 'Company',
             'required': 'true',
-			'ignoreIfNotPresent': 'true'
+			'IgnoreIfNotPresent': 'true'
             }, {
             'anchorString': 'Client Name',
+			'IgnoreIfNotPresent': 'true'
             'anchorYOffset': '-38',
             'fontSize': 'Size12',
             'recipientId': '1',
             'tabLabel': 'Company',
             'name': 'Company',
             'required': 'false',
-			'ignoreIfNotPresent': 'true'
             }, {
             'documentId': '3',
             'pageNumber': '1',
@@ -224,7 +224,7 @@ def send():
             'required': 'true',
             'tabLabel': 'Company',
             'name': 'Company',
-			'ignoreIfNotPresent': 'true'
+			'IgnoreIfNotPresent': 'true'
             }],
         'dateSignedTabs': [{
             'anchorString': 'signer1date',
@@ -233,7 +233,7 @@ def send():
             'recipientId': '1',
             'name': 'Date Signed',
             'tabLabel': 'date_signed',
-			'ignoreIfNotPresent': 'true'
+			'IgnoreIfNotPresent': 'true'
             }, {
             'documentId': '2',
             'pageNumber': '1',
@@ -244,7 +244,7 @@ def send():
             'recipientId': '1',
             'name': 'Date Signed',
             'tabLabel': 'doc3_date_signed',
-			'ignoreIfNotPresent': 'true'
+			'IgnoreIfNotPresent': 'true'
             }],
         }
 
