@@ -132,108 +132,139 @@ def send():
     # Explicitly placed fields are used in the contractor_agreement
     # and on the house diagram
     #
-    # Some anchor fields for document 3, the contractor_agreement.docx, use existing
+    # Some anchor fields for document 3, the contractor_agreement.docx, use existing 
     # content from the document:
     #   * "Client Signature"
     #   * "Client Name"
-    #
+    # 
     # NOTE: Anchor fields search ALL the documents in the envelope for
     # matches to the field's anchor text
-
-    fields = {  # Anchored for doc 1
-                # Explicit position for doc 2
-                # Anchored for doc 3
-                # Anchored for doc 1
-                # Anchored for doc 1
-                # Because the same tab label is
-                # used, these fields will have duplicate data
-                # Note that the account's "Data Population Scope"
-                # must be set to "Envelope" to enable this feature.
-                # Anchored for doc 3
-                # Explicit position for doc 3
-                # Anchored for doc 1
-                # Explicit position for doc 2
-        'signHereTabs': [{
-            'anchorString': 'signer1sig',
-            'anchorXOffset': '0',
-            'anchorYOffset': '0',
-            'anchorUnits': 'mms',
-            'recipientId': '1',
-            'name': 'Please sign here',
-            'optional': 'false',
-            'scaleValue': 1,
-            'tabLabel': 'signer1sig',
-			'IgnoreIfNotPresent': 'true'
-            }, {
-            'documentId': '2',
-            'pageNumber': '1',
-            'recipientId': '2',
-            'xPosition': '89',
-            'yPosition': '40',
-            'name': 'Please sign here',
-            'optional': 'false',
-            'scaleValue': 1,
-            'tabLabel': 'signer1_doc2',
-			'IgnoreIfNotPresent': 'true'
-            }],
-        'fullNameTabs': [{
-            'anchorString': 'signer1name',
-            'anchorYOffset': '-6',
-            'fontSize': 'Size12',
-            'recipientId': '1',
-            'tabLabel': 'Full Name',
-            'name': 'Full Name',
-			'IgnoreIfNotPresent': 'true'
-            }],
-        'textTabs': [{
-            'anchorString': 'signer1company',
-            'anchorYOffset': '-8',
-            'fontSize': 'Size12',
-            'recipientId': '1',
-            'tabLabel': 'Company',
-            'name': 'Company',
-            'required': 'true',
-			'IgnoreIfNotPresent': 'true'
-            }, {
-            'documentId': '3',
-            'pageNumber': '1',
-            'recipientId': '1',
-            'xPosition': '145',
-            'yPosition': '195',
-            'fontSize': 'Size10',
-            'required': 'true',
-            'tabLabel': 'Company',
-            'name': 'Company',
-			'IgnoreIfNotPresent': 'true'
-            }],
-        'dateSignedTabs': [{
-            'anchorString': 'signer1date',
-            'anchorYOffset': '-6',
-            'fontSize': 'Size12',
-            'recipientId': '1',
-            'name': 'Date Signed',
-            'tabLabel': 'date_signed',
-			'IgnoreIfNotPresent': 'true'
-            }, {
-            'documentId': '2',
-            'pageNumber': '1',
-            'recipientId': '1',
-            'xPosition': '89',
-            'yPosition': '100',
-            'fontSize': 'Size12',
-            'recipientId': '1',
-            'name': 'Date Signed',
-            'tabLabel': 'doc3_date_signed',
-			'IgnoreIfNotPresent': 'true'
-            }],
-        }
+    fields1 = {
+    "signHereTabs": [{
+        "anchorString": "signer1sig", # Anchored for doc 1
+        "anchorXOffset": "0",
+         "anchorYOffset": "0",
+        "anchorUnits": "mms",
+        "recipientId": "1",
+        "name": "Please sign here",
+        "optional": "false",
+        "scaleValue": 1,
+        "tabLabel": "signer1sig"},
+        {
+        "documentId": "2", # Explicit position for doc 2
+        "pageNumber": "1",
+        "recipientId": "2",
+        "xPosition": "89",
+        "yPosition": "40",
+        "name": "Please sign here",
+        "optional": "false",
+        "scaleValue": 1,
+        "tabLabel": "signer1_doc2"}],
+    "fullNameTabs": [{
+        "anchorString": "signer1name", # Anchored for doc 1
+         "anchorYOffset": "-6",
+        "fontSize": "Size12",
+        "recipientId": "1",
+        "tabLabel": "Full Name",
+        "name": "Full Name"}],
+    "textTabs": [{                 
+        "anchorString": "signer1company", # Anchored for doc 1
+         "anchorYOffset": "-8",
+        "fontSize": "Size12",
+        "recipientId": "1",      # Because the same tab label is 
+        "tabLabel": "Company",   # used, these fields will have duplicate data
+        "name": "Company",       # Note that the account's "Data Population Scope"
+        "required": "true"},     # must be set to "Envelope" to enable this feature.
+        ],
+    "dateSignedTabs": [{
+        "anchorString": "signer1date", # Anchored for doc 1
+        "anchorYOffset": "-6",
+        "fontSize": "Size12",
+        "recipientId": "1",
+        "name": "Date Signed",
+        "tabLabel": "date_signed"},
+        {
+        "documentId": "2", # Explicit position for doc 2
+        "pageNumber": "1",
+        "recipientId": "1",
+        "xPosition": "89",
+        "yPosition": "100",
+        "fontSize": "Size12",
+        "recipientId": "1",
+        "name": "Date Signed",
+        "tabLabel": "doc3_date_signed"}]
+    }
+	
+	fields2 = {
+    "signHereTabs": [{
+        "anchorString": "signer1sig", # Anchored for doc 1
+        "anchorXOffset": "0",
+         "anchorYOffset": "0",
+        "anchorUnits": "mms",
+        "recipientId": "1",
+        "name": "Please sign here",
+        "optional": "false",
+        "scaleValue": 1,
+        "tabLabel": "signer1sig"},
+        {
+        "anchorString": "Client Signature", # Anchored for doc 3
+        "anchorXOffset": "0",
+         "anchorYOffset": "-4",
+        "anchorUnits": "mms",
+        "recipientId": "1",
+        "name": "Please sign here",
+        "optional": "false",
+        "scaleValue": 1,
+        "tabLabel": "doc3_client_sig"}],
+    "fullNameTabs": [{
+        "anchorString": "signer1name", # Anchored for doc 1
+         "anchorYOffset": "-6",
+        "fontSize": "Size12",
+        "recipientId": "1",
+        "tabLabel": "Full Name",
+        "name": "Full Name"}],
+    "textTabs": [{                 
+        "anchorString": "signer1company", # Anchored for doc 1
+         "anchorYOffset": "-8",
+        "fontSize": "Size12",
+        "recipientId": "1",      # Because the same tab label is 
+        "tabLabel": "Company",   # used, these fields will have duplicate data
+        "name": "Company",       # Note that the account's "Data Population Scope"
+        "required": "true"},     # must be set to "Envelope" to enable this feature.
+        {
+        "anchorString": "Client Name", # Anchored for doc 3
+        "anchorYOffset": "-38",
+        "fontSize": "Size12",
+        "recipientId": "1",
+        "tabLabel": "Company",  
+        "name": "Company",      
+        "required": "true"},    
+        {
+        "documentId": "3", # Explicit position for doc 3
+        "pageNumber": "1",
+        "recipientId": "1",
+        "xPosition": "145",
+        "yPosition": "195",
+        "fontSize": "Size10",
+        "required": "true",
+        "tabLabel": "Company",
+        "name": "Company"}],
+    "dateSignedTabs": [{
+        "anchorString": "signer1date", # Anchored for doc 1
+        "anchorYOffset": "-6",
+        "fontSize": "Size12",
+        "recipientId": "1",
+        "name": "Date Signed",
+        "tabLabel": "date_signed"}
+        ]
+    }
 
     signers1 = [{
         'email': ds_signer1_email,
         'name': ds_signer1_name,
         'recipientId': '1',
         'routingOrder': '1',
-        'tabs': fields,
+        'tabs': fields1,
         }]
 
     signers2 = [{
@@ -241,7 +272,7 @@ def send():
         'name': ds_signer2_name,
         'recipientId': '2',
         'routingOrder': '2',
-        'tabs': fields,
+        'tabs': fields2,
         }]
 
     ccs = [{
