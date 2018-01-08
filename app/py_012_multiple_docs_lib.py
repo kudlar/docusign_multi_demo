@@ -177,7 +177,7 @@ def send():
 			'IgnoreIfNotPresent': 'true'
             }, {
             'anchorString': 'Client Signature',
-			'IgnoreIfNotPresent': 'true'
+			'IgnoreIfNotPresent': 'true',
             'anchorXOffset': '0',
             'anchorYOffset': '-4',
             'anchorUnits': 'mms',
@@ -207,7 +207,7 @@ def send():
 			'IgnoreIfNotPresent': 'true'
             }, {
             'anchorString': 'Client Name',
-			'IgnoreIfNotPresent': 'true'
+			'IgnoreIfNotPresent': 'true',
             'anchorYOffset': '-38',
             'fontSize': 'Size12',
             'recipientId': '1',
