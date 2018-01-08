@@ -91,7 +91,7 @@ def send():
                 "name": doc3_document_name,
                 "fileExtension": os.path.splitext(doc3_document_path)[1][1:],
                 "documentBase64": base64.b64encode(file3_contents)}
-            ]
+        ]
     
     # The signing fields
     #
@@ -220,10 +220,10 @@ def send():
     }
 
     data2 = {"emailSubject": subject,
-            "documents": documents2,
-            "recipients": {"signers": signers2, "carbonCopies": ccs},
-            "status": "sent"
-        }
+        "documents": documents2,
+        "recipients": {"signers": signers2, "carbonCopies": ccs},
+        "status": "sent"
+    }
         
     # append "/envelopes" to the baseUrl and use in the request
     url = ds_recipe_lib.ds_base_url + "/envelopes"
