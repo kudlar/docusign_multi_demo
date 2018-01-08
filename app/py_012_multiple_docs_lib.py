@@ -45,10 +45,10 @@ def send():
     # ds_cc1_email = ds_recipe_lib.get_signer_email(ds_cc1_email)
     # ds_cc1_name = ds_recipe_lib.get_signer_name(ds_cc1_name)
 
-     ds_signer1_email = "rastok@gmail.com"
-     ds_signer1_name = "Signer 1"
-     ds_cc1_email = "rasto@grownapps.io"
-     ds_cc1_name = "Signer 2"
+    ds_signer1_email = "rastok@gmail.com"
+    ds_signer1_name = "Signer 1"
+    ds_cc1_email = "rasto@grownapps.io"
+    ds_cc1_name = "Signer 2"
 
     # STEP 1 - Login
     r = ds_recipe_lib.login()
