@@ -149,8 +149,7 @@ def send():
         "name": "Please sign here",
         "optional": "false",
         "scaleValue": 1,
-        "tabLabel": "signer1sig"},
-        {
+        "tabLabel": "signer1sig"}, {
         "documentId": "2", # Explicit position for doc 2
         "pageNumber": "1",
         "recipientId": "2",
@@ -182,8 +181,7 @@ def send():
         "fontSize": "Size12",
         "recipientId": "1",
         "name": "Date Signed",
-        "tabLabel": "date_signed"},
-        {
+        "tabLabel": "date_signed"}, {
         "documentId": "2", # Explicit position for doc 2
         "pageNumber": "1",
         "recipientId": "1",
@@ -205,8 +203,7 @@ def send():
         "name": "Please sign here",
         "optional": "false",
         "scaleValue": 1,
-        "tabLabel": "signer1sig"},
-        {
+        "tabLabel": "signer1sig"}, {
         "anchorString": "Client Signature", # Anchored for doc 3
         "anchorXOffset": "0",
          "anchorYOffset": "-4",
@@ -238,8 +235,7 @@ def send():
         "recipientId": "1",
         "tabLabel": "Company",  
         "name": "Company",      
-        "required": "true"},    
-        {
+        "required": "true"}, {
         "documentId": "3", # Explicit position for doc 3
         "pageNumber": "1",
         "recipientId": "1",
@@ -255,8 +251,7 @@ def send():
         "fontSize": "Size12",
         "recipientId": "1",
         "name": "Date Signed",
-        "tabLabel": "date_signed"}
-        ]
+        "tabLabel": "date_signed"}]
     }
 
     signers1 = [{
