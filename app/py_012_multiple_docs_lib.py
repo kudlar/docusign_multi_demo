@@ -182,7 +182,7 @@ def send():
             'anchorUnits': 'mms',
             'recipientId': '1',
             'name': 'Please sign here',
-            'optional': 'false',
+            'optional': 'true',
             'scaleValue': 1,
             'tabLabel': 'doc3_client_sig',
 			'ignoreIfNotPresent ': 'true'
@@ -212,7 +212,7 @@ def send():
             'recipientId': '1',
             'tabLabel': 'Company',
             'name': 'Company',
-            'required': 'true',
+            'required': 'false',
 			'ignoreIfNotPresent ': 'true'
             }, {
             'documentId': '3',
