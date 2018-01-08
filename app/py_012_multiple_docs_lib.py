@@ -175,17 +175,6 @@ def send():
             'scaleValue': 1,
             'tabLabel': 'signer1_doc2',
 			'IgnoreIfNotPresent': 'true'
-            }, {
-            'anchorString': 'Client Signature',
-			'IgnoreIfNotPresent': 'true',
-            'anchorXOffset': '0',
-            'anchorYOffset': '-4',
-            'anchorUnits': 'mms',
-            'recipientId': '1',
-            'name': 'Please sign here',
-            'optional': 'true',
-            'scaleValue': 1,
-            'tabLabel': 'doc3_client_sig'
             }],
         'fullNameTabs': [{
             'anchorString': 'signer1name',
@@ -205,15 +194,6 @@ def send():
             'name': 'Company',
             'required': 'true',
 			'IgnoreIfNotPresent': 'true'
-            }, {
-            'anchorString': 'Client Name',
-			'IgnoreIfNotPresent': 'true',
-            'anchorYOffset': '-38',
-            'fontSize': 'Size12',
-            'recipientId': '1',
-            'tabLabel': 'Company',
-            'name': 'Company',
-            'required': 'false',
             }, {
             'documentId': '3',
             'pageNumber': '1',
